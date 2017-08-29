@@ -17,6 +17,13 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryUserDataService } from "./commun/in-memory/in-memory.data";
 import { UserListComponent } from "./user/component/userList.component";
 import { UserService } from "./commun/service/user/user.service";
+import { RepositoryService } from "app/commun/service/repository-service";
+import { ArticleService } from './commun/service/article.service';
+import { ArticleListComponent } from './article/component/articleList.component';
+import { InMemoryArticleDataService } from './commun/in-memory/in-memory-article';
+import { FooterComponent } from './commun/layout/footer/footer.component';
+import { LayoutComponent } from './commun/layout/layout.component';
+import { UserComponent } from './user/component/user.component';
 import { UserRepositoryService } from "app/commun/service/repository-service";
 import { AppRoutingModule } from "./app.routing.module";
 
@@ -47,6 +54,7 @@ import { AppRoutingModule } from "./app.routing.module";
     HttpService,
     AuthService
   ],
+  providers: [ InMemoryArticleDataService, ArticleService ],
   bootstrap: [AppComponent]
 
 })
