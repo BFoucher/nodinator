@@ -24,7 +24,6 @@ import { AppRoutingModule } from "./app.routing.module";
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
     LayoutComponent,
     FooterComponent,
     UserListComponent,
