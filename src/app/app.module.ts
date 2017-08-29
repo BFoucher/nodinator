@@ -10,6 +10,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpModule, RequestOptions, XHRBackend } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { ContentComponent } from './content/component/content.component';
+import { BreadcrumbComponent } from './commun/layout/breadcrumb.component';
+// import { RepositoryService } from "./commun/service/repository-service";
 import { UserComponent } from "./user/component/user.component";
 import { LayoutComponent } from "./commun/layout/layout.component";
 import { FooterComponent } from "./commun/layout/footer/footer.component";
@@ -24,12 +27,14 @@ import { AppRoutingModule } from "./app.routing.module";
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
     LayoutComponent,
     FooterComponent,
     UserListComponent,
     NavComponent,
     LoginComponent
+    ContentComponent,
+    BreadcrumbComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
