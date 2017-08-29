@@ -10,12 +10,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpModule, RequestOptions, XHRBackend } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { ContentComponent } from './content/component/content.component';
+import { ArticleComponent } from './article/component/article.component';
 import { BreadcrumbComponent } from './commun/layout/breadcrumb.component';
 // import { RepositoryService } from "./commun/service/repository-service";
-import { UserComponent } from "./user/component/user.component";
-import { LayoutComponent } from "./commun/layout/layout.component";
-import { FooterComponent } from "./commun/layout/footer/footer.component";
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryUserDataService } from "./commun/in-memory/in-memory.data";
 import { UserListComponent } from "./user/component/userList.component";
@@ -34,6 +31,7 @@ import { AppRoutingModule } from "./app.routing.module";
     LoginComponent
     ContentComponent,
     BreadcrumbComponent,
+    UserListComponent
     UserComponent
   ],
   imports: [
@@ -41,7 +39,7 @@ import { AppRoutingModule } from "./app.routing.module";
     FormsModule,
     HttpModule,
     AppRoutingModule,
-
+    InMemoryWebApiModule.forRoot(InMemoryArticleDataService)
   ],
   providers: [
     { provide: UserRepositoryService, useClass: UserService },
@@ -49,6 +47,7 @@ import { AppRoutingModule } from "./app.routing.module";
     HttpService,
     AuthService
   ],
+  providers: [ InMemoryArticleDataService, ArticleService ],
   bootstrap: [AppComponent]
 
 })
