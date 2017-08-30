@@ -43,7 +43,6 @@ import { AppRoutingModule } from "./app.routing.module";
     HttpService,
     AuthService
   ],
-  providers: [ InMemoryArticleDataService, ArticleService ],
   bootstrap: [AppComponent]
 
 })
