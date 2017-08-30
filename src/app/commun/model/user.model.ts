@@ -1,8 +1,4 @@
 export class User {
-    constructor(id: number,
-        nom: string,
-        description: string,
-        categorie: TypeCategorieUser) { }
     id: number;
     firstName: string;
     lastName: string;
