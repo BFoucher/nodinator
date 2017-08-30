@@ -20,7 +20,6 @@ import { UserService } from "./commun/service/user/user.service";
 import { RepositoryService } from "app/commun/service/repository-service";
 import { ArticleService } from './commun/service/article.service';
 import { ArticleListComponent } from './article/component/articleList.component';
-import { InMemoryArticleDataService } from './commun/in-memory/in-memory-article';
 import { FooterComponent } from './commun/layout/footer/footer.component';
 import { LayoutComponent } from './commun/layout/layout.component';
 import { UserComponent } from './user/component/user.component';
@@ -33,9 +32,12 @@ import { AppRoutingModule } from "./app.routing.module";
     AppComponent,
     LayoutComponent,
     FooterComponent,
+    ArticleComponent,
+    ArticleListComponent,
     UserListComponent,
     NavComponent,
     LoginComponent
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -45,12 +47,11 @@ import { AppRoutingModule } from "./app.routing.module";
 
   ],
   providers: [
-    { provide: UserRepositoryService, useClass: UserService },
-    UserService,
+    { provide: RepositoryService, useClass: UserService },
+    UserService, ArticleService
     HttpService,
     AuthService
   ],
-  providers: [ InMemoryArticleDataService, ArticleService ],
   bootstrap: [AppComponent]
 
 })
