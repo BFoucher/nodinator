@@ -3,5 +3,17 @@
     <p>{{ article?.content }}</p>
 </div>
 <div *ngIf="!article">
-    <p>Une erreur est survenue...</p>
+        <form action="/articles/add">
+            Titre:<br>
+            <input type="text" name="title" value="">
+            <br>
+            Contenu:<br>
+            <input type="text" name="content" value="">
+            Abrégé:<br>
+            <input type="text" name="slug" value="">
+            Terminé:<br>
+            <input type="checkbox" name="status" value="">
+            <br><br>
+            <input type="submit" value="Submit">
+          </form> 
 </div>

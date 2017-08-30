@@ -6,6 +6,10 @@
             <a (click)="gotoDetail(article)" style="">{{article.title}}</a>
         </div>
     </div>
+
+    <div>
+        <a (click)="addArticle()">Ajouter un article</a>
+    </div>
     <!--<div *ngIf="selectedArticle">
         <h2>
             {{selectedArticle.title | uppercase}} is my user

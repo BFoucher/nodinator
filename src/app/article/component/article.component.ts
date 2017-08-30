@@ -26,7 +26,11 @@ export class ArticleComponent implements OnInit {
                 }
             });
         });
+
+        //this._repo.add().subscribe()
     }
+
+    
 
     //@Input() article: Article;
 
