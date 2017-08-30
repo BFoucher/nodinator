@@ -17,13 +17,12 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryUserDataService } from './commun/in-memory/in-memory.data';
 import { UserListComponent } from './user/component/userList.component';
 import { UserService } from './commun/service/user/user.service';
-import { RepositoryService } from 'app/commun/service/repository-service';
 import { ArticleService } from './commun/service/article/article.service';
 import { ArticleListComponent } from './article/component/articleList.component';
 import { FooterComponent } from './commun/layout/footer/footer.component';
 import { LayoutComponent } from './commun/layout/layout.component';
 import { UserComponent } from './user/component/user.component';
-import { UserRepositoryService } from "app/commun/service/repository-service";
+import { UserRepositoryService } from "./commun/service/repository-service";
 import { AppRoutingModule } from "./app.routing.module";
 
 

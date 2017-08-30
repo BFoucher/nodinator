@@ -16,9 +16,15 @@ const routes: Routes = [
   {
     path: 'user',
     children: [
-      { path: "", canActivateChild: [AuthGuard], component: UserListComponent},
+      {path:'', canActivateChild: [AuthGuard],component:UserListComponent},
       { path: 'detail/:id', component: UserComponent, canActivateChild: [AuthGuard] },
       { path: 'form', component: UserComponent, canActivateChild: [AuthGuard] }
+    ]
+  },
+  { path: 'articles',
+    children: [
+      {path: '', component: ArticleListComponent},
+      {path: 'detail/:id', component: ArticleComponent}
     ]
   }
 ];
