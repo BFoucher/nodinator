@@ -21,4 +21,8 @@ export class ArticleListComponent implements OnInit {
         this.selectedArticle = article;
         this.router.navigate(['articles/detail/', this.selectedArticle.id]);
     }
+
+    addArticle(): void {
+        this.router.navigate(['articles/detail', 0]);
+    }
 }
