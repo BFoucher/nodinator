@@ -23,7 +23,7 @@ import { ArticleListComponent } from './article/component/articleList.component'
 import { FooterComponent } from './commun/layout/footer/footer.component';
 import { LayoutComponent } from './commun/layout/layout.component';
 import { UserComponent } from './user/component/user.component';
-import { UserRepositoryService } from "app/commun/service/repository-service";
+import { UserRepositoryService } from "./commun/service/repository-service";
 import { AppRoutingModule } from "./app.routing.module";
 
 
@@ -47,7 +47,7 @@ import { AppRoutingModule } from "./app.routing.module";
 
   ],
   providers: [
-    { provide: RepositoryService, useClass: UserService },
+    { provide: UserRepositoryService, useClass: UserService },
     UserService, ArticleService
     HttpService,
     AuthService

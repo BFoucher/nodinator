@@ -30,6 +30,35 @@ export class InMemoryUserDataService implements InMemoryDbService {
                 articles: ["test"]
             },
         ];
-        return { users };
+        const articles = [ 
+            { 
+              id: 1,
+              title: 'article 1', 
+              content: 'ceci est un contenu', 
+              slug: 'first', 
+              status: 'publish' 
+            }, 
+            { 
+              id: 2,
+              title: 'Article Angular', 
+              content: 'Apprendre Angular', 
+              slug: 'angular', 
+              status: 'draft' 
+            }, 
+            { 
+              id: 3,
+              title: 'Article NodeJS', 
+              content: 'Apprendre NodeJS', 
+              slug: 'nodejs', 
+              status: 'draft' 
+            }, 
+            { 
+              id: 4,
+              title: 'KSH', 
+              content: 'Apprendre KSH', 
+              slug: 'ksh', 
+              status: 'publish' 
+            }]; 
+        return { users, articles };
     }
 }

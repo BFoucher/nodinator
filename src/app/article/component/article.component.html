@@ -1,12 +1,7 @@
-<p>
-    {{ article?.title }}
-</p>
-<p>
-    {{ article?.content }}
-</p>
-<p>
-    {{ article?.slug }}
-</p>
-<p>
-    {{ article?.status }}
-</p>
+<div *ngIf="article">
+    <h2>{{ article?.title | uppercase }}</h2>
+    <p>{{ article?.content }}</p>
+</div>
+<div *ngIf="!article">
+    <p>Une erreur est survenue...</p>
+</div>

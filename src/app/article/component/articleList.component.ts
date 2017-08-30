@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Article } from '../../commun/model/article.model';
 import { ArticleService } from '../../commun/service/article.service';
 import { Component, OnInit } from '@angular/core';
@@ -8,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleListComponent implements OnInit {
     private articles: Article[];
+    private selectedArticle: Article;
     
-    constructor(private serv: ArticleService) {}
+    constructor(private serv: ArticleService, private router: Router) {}
     
     ngOnInit(): void {
         this.serv.getArticles().then(articles => this.articles = articles);
+    }
+
+    gotoDetail(article: Article): void {
+        this.selectedArticle = article;
+        this.router.navigate(['articles/detail/', this.selectedArticle.id]);
     }
 }
