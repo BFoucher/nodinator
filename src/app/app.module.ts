@@ -31,7 +31,7 @@ import { AppRoutingModule } from "./app.routing.module";
     LoginComponent
     ContentComponent,
     BreadcrumbComponent,
-    UserListComponent
+    UserListComponent,
     UserComponent
   ],
   imports: [
@@ -47,7 +47,6 @@ import { AppRoutingModule } from "./app.routing.module";
     HttpService,
     AuthService
   ],
-  providers: [ InMemoryArticleDataService, ArticleService ],
   bootstrap: [AppComponent]
 
 })

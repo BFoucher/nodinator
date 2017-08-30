@@ -3,7 +3,7 @@ import { UserRepositoryService } from './../repository-service';
 import { Observable } from 'rxjs/Rx';
 import { Headers, Http, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { User, TypeCategorieUser } from "./../../model/user.model";
+import { User, TypeCategorieUser } from './../../model/user.model';
 import { AuthService } from "app/commun/service/auth-gard-service";
 import { Router } from "@angular/router";
 
