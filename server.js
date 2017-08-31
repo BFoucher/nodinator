@@ -10,7 +10,11 @@ const config = require(configDesignation);
 const morgan = require('morgan');
 
 // Open  mongoose connection
-mongoose.connect(`mongodb://${config.database_host}:${config.database_port}/${config.database_name}`);
+try {
+    mongoose.connect(`mongodb://${config.database_host}:${config.database_port}/${config.database_name}`);
+} catch (err) {
+    throw 'Database connection failed';
+}
 
 // Get our API routes
 const oauth = require('./server/routes/apiOauth');
