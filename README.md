@@ -15,5 +15,5 @@ Make sure MongoDB is running and run :
 ## Running unit tests
 
   ````
-  $ npm run api:test
+  $ npm run test:api
   ````
