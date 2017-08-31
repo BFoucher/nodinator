@@ -1,3 +1,4 @@
+import { ArticleComponent } from './article/component/article.component';
 import { AuthService } from './commun/service/auth-gard-service';
 import { LoginComponent } from './commun/login/login.component';
 import { HttpService} from './commun/http/http.service';
@@ -10,20 +11,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpModule, RequestOptions, XHRBackend } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { UserComponent } from "./user/component/user.component";
 import { LayoutComponent } from "./commun/layout/layout.component";
-import { FooterComponent } from "./commun/layout/footer/footer.component";
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryUserDataService } from "./commun/in-memory/in-memory.data";
 import { UserListComponent } from "./user/component/userList.component";
 import { UserService } from "./commun/service/user/user.service";
-import { RepositoryService } from "app/commun/service/repository-service";
-import { ArticleService } from './commun/service/article.service';
+import { UserRepositoryService } from "app/commun/service/repository-service";
+import { ArticleService } from './commun/service/article/article.service';
 import { ArticleListComponent } from './article/component/articleList.component';
 import { FooterComponent } from './commun/layout/footer/footer.component';
-import { LayoutComponent } from './commun/layout/layout.component';
 import { UserComponent } from './user/component/user.component';
-import { UserRepositoryService } from "./commun/service/repository-service";
 import { AppRoutingModule } from "./app.routing.module";
 
 
@@ -36,7 +33,7 @@ import { AppRoutingModule } from "./app.routing.module";
     ArticleListComponent,
     UserListComponent,
     NavComponent,
-    LoginComponent
+    LoginComponent,
     UserComponent
   ],
   imports: [
@@ -48,7 +45,7 @@ import { AppRoutingModule } from "./app.routing.module";
   ],
   providers: [
     { provide: UserRepositoryService, useClass: UserService },
-    UserService, ArticleService
+    UserService, ArticleService,
     HttpService,
     AuthService
   ],
