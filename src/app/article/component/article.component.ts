@@ -11,6 +11,7 @@ export class ArticleComponent implements OnInit {
 
     private article: Article;
     private articleId: number;
+    private submitted: boolean = false;
     
     constructor(private _repo: ArticleService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
