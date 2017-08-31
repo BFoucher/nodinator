@@ -1,30 +1,12 @@
 <div *ngIf="article">
-    <form #articleForm="ngForm" action="/articles/detail" (ngSubmit)="onSubmit()">
-        Titre:<br>
-        <input type="text" name="title" required [(ngModel)]="article.title">
-        <br>
-        Contenu:<br>
-        <input type="text" name="content" required [(ngModel)]="article.content">
-        Abrégé:<br>
-        <input type="text" name="slug" [(ngModel)]="article.slug">
-        Terminé:<br>
-        <input type="checkbox" name="status" [(ngModel)]="article.status">
-        <br><br>
-        <input type="submit" value="Submit" [disabled]="!articleForm.form.valid">
-    </form> 
-</div>
-<div *ngIf="!article">
-    <form #articleForm="ngForm" action="/articles/add" (ngSubmit)="onSubmit()">
-        Titre:<br>
-        <input type="text" name="title" value="" required>
-        <br>
-        Contenu:<br>
-        <input type="text" name="content" value="" required>
-        Abrégé:<br>
-        <input type="text" name="slug" value="">
-        Terminé:<br>
-        <input type="checkbox" name="status" value="">
-        <br><br>
-        <input type="submit" value="Submit" [disabled]="!articleForm.form.valid">
-    </form> 
+    <div class="ui card container">
+            <div class="content ui segments">
+                <div class="ui segment align-middle">
+                        {{article.title}}
+                </div>
+                <div class="ui segment">
+                        {{article.content}}
+                </div>
+            </div>
+    </div>
 </div>
