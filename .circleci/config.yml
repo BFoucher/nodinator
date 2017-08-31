@@ -15,6 +15,14 @@ jobs:
       # - image: circleci/mongo:3.4.4
 
     working_directory: ~/repo
+    dependencies:
+      override:
+        - sudo apt-get purge mongodb-org*
+        - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+        - echo "deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+        - sudo apt-get update
+        - sudo apt-get install -y mongodb-org
+        - sudo service mongod restart
 
     steps:
       - checkout
@@ -33,8 +41,10 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      ## Load Fixtures
+      - run: npm run generator:content
       # run tests!
-      - run: npm test:api
+      - run: npm run api:test
 
       ##- run: npm install -g @angular/cli
       - run: ng build
