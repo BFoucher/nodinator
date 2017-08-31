@@ -1,5 +1,5 @@
 # Nodinator
-
+[![CircleCI](https://circleci.com/gh/MadeWilson/nodinator.svg?style=svg)](https://circleci.com/gh/MadeWilson/nodinator)
 ## Build
   ````
   $ ng build
