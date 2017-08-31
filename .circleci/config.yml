@@ -42,9 +42,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       ## Load Fixtures
-      - run: npm run generator:content
+      - run: yarn run generator:content
       # run tests!
-      - run: npm run api:test
+      - run: yarn run api:test
 
       ##- run: npm install -g @angular/cli
       - run: ng build
