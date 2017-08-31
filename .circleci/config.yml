@@ -44,7 +44,7 @@ jobs:
       ## Load Fixtures
       - run: yarn run generator:content
       # run tests!
-      - run: yarn run api:test
+      - run: yarn run test:api
 
       ##- run: npm install -g @angular/cli
       - run: ng build
