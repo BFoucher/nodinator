@@ -1,6 +1,9 @@
 .layout {
     height: 100%;
 }
+.align-middle {
+    text-align: center;
+}
 .footer{
     bottom: 0;
     height: 100%;

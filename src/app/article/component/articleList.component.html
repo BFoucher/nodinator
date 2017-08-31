@@ -2,18 +2,27 @@
     <h2>Liste des articles</h2>
 
     <div *ngFor="let article of articles">
-        <div *ngIf="article.status == 'publish'">
-            <a (click)="gotoDetail(article)" style="">{{article.title}}</a>
+        <div class="container "*ngIf="article.status == 'publish'" >
+            <div class="ui card">
+                <div class="content ui segments">
+                    <div *ngIf="article.img" class="image">
+                        Entête de contenu optionel (image)
+                        <img class="ui segment" src="">
+                    </div>
+                    <a class="header nowrap ui segment align-middle" (click)="gotoDetail(article)">
+                        <h4> {{article.title}} </h4>
+                    </a>
+                    <div class="description ui segment">
+                        <span>{{article.content}}</span>
+                    </div>
+                    <div class="description ui segment">
+                        <span>Zone d'informations</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
     <div>
         <a (click)="addArticle()">Ajouter un article</a>
     </div>
-    <!--<div *ngIf="selectedArticle">
-        <h2>
-            {{selectedArticle.title | uppercase}} is my user
-        </h2>
-        <button (click)="gotoDetail()">View Details</button>
-    </div>-->
 </div>
